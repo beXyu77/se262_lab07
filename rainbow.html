@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow</title>
+
+</head>
+<body>
+    <!-- Write your code here. -->
+
+    <button id="redBtn">RED</button>
+    <button id="orangeBtn">ORANGE</button>
+    <button id="yellowBtn">YELLOW</button>
+    <button id="greenBtn">GREEN</button>
+    <button id="blueBtn">BLUE</button>
+    <button id="purpleBtn">PURPLE</button>
+
+    <script>
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        function buttonClickHandler(event) {
+            let color = event.target.textContent.toUpperCase();
+
+            const colorMap = {
+                'RED': 'red',
+                'ORANGE': 'orange',
+                'YELLOW': 'yellow',
+                'GREEN': 'green',
+                'BLUE': 'blue',
+                'PURPLE': 'purple'
+            };
+
+            if (colorMap[color]) {
+                changeBackgroundColor(colorMap[color]);
+            }
+        }
+
+        document.getElementById("redBtn").addEventListener("click", buttonClickHandler);
+        document.getElementById("orangeBtn").addEventListener("click", buttonClickHandler);
+        document.getElementById("yellowBtn").addEventListener("click", buttonClickHandler);
+        document.getElementById("greenBtn").addEventListener("click", buttonClickHandler);
+        document.getElementById("blueBtn").addEventListener("click", buttonClickHandler);
+        document.getElementById("purpleBtn").addEventListener("click", buttonClickHandler);
+    </script>
+
+</body>
+</html>

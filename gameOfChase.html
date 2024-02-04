@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game of Chase</title>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">PATHATHAI NALUMPOON</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">644900.000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">PATHATHAI NALUMPOON</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x0101000D58A68BA94FDF4D85DBA01588B679FE</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:MediaLengthInSeconds msdt:dt="string"></mso:MediaLengthInSeconds>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <!-- Write your code here. -->
+    <style>
+        .circle {
+            width: 50px;
+            height: 50px;
+            background-color: lightcoral;
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
+
+    <div id="circle" class="circle"></div>
+
+    <script>
+        function randomInt(min, max){
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+        let circle=document.querySelector('.circle');
+        circle.addEventListener("mouseover",e =>{
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        const newX = Math.floor(Math.random() * (screenWidth - 50));
+        const newY = Math.floor(Math.random() * (screenHeight - 50));
+        setTimeout(function() {
+            circle.style.left= newX+"px";
+            circle.style.top=newY+"px";
+        },1000)
+            
+        });
+        let color = ["red","green","blue","yellow","purple"]
+        circle.addEventListener("click",()=>{
+            circle.style.backgroundColor=color[randomInt(0, color.length)]
+        })
+</script>
+
+</body>
+</html>
